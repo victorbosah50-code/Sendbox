@@ -1,12 +1,19 @@
 // -------------------- PRICING TABLE --------------------
 const pricingTable = document.getElementById('pricing-table');
-if(pricingTable){
+const signupModal = document.getElementById('signup-modal');
+const modalPlanName = document.getElementById('modal-plan-name');
+const paymentSection = document.getElementById('payment-section');
+const signupSubmit = document.getElementById('signup-submit');
+const closeModal = document.getElementById('close-modal');
+
 const plans = [
-  {name:"Free", monthly:0, yearly:0, users:3, features:["3 Sends"]},
-  {name:"Basic", monthly:29, yearly:290, users:5, features:["10 Sends","Basic Support"]},
-  {name:"Professional", monthly:59, yearly:590, users:10, features:["Unlimited Sends","Priority Support","Advanced Collaboration"]},
-  {name:"Enterprise", monthly:"Custom", yearly:"Custom", users:"Custom", features:["Custom Features","Dedicated Support"]},
+  {name:"Free", monthly:0, yearly:0, users:3, features:["3 Sends"], paid:false},
+  {name:"Basic", monthly:29, yearly:290, users:5, features:["10 Sends","Basic Support"], paid:true},
+  {name:"Professional", monthly:59, yearly:590, users:10, features:["Unlimited Sends","Priority Support","Advanced Collaboration"], paid:true},
+  {name:"Enterprise", monthly:"Custom", yearly:"Custom", users:"Custom", features:["Custom Features","Dedicated Support"], paid:true},
 ];
+
+if(pricingTable){
 plans.forEach(plan=>{
   const div=document.createElement('div'); div.className='plan';
   div.innerHTML=`
@@ -15,10 +22,37 @@ plans.forEach(plan=>{
     <p>Yearly: ${plan.yearly}</p>
     <p>Users: ${plan.users}</p>
     <ul>${plan.features.map(f=>`<li>${f}</li>`).join('')}</ul>
+    <button class="select-plan" data-plan='${plan.name}' data-paid='${plan.paid}'>Select Plan</button>
   `;
   pricingTable.appendChild(div);
 });
 }
+
+// -------------------- SELECT PLAN --------------------
+document.querySelectorAll('.select-plan').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const planName = btn.dataset.plan;
+    const isPaid = btn.dataset.paid === 'true';
+    modalPlanName.textContent = `Sign Up - ${planName}`;
+    if(isPaid) paymentSection.style.display='block';
+    else paymentSection.style.display='none';
+    signupModal.style.display='block';
+  });
+});
+
+if(closeModal){
+  closeModal.addEventListener('click', ()=> signupModal.style.display='none');
+}
+
+// -------------------- SIGNUP SUBMIT --------------------
+if(signupSubmit){
+signupSubmit.addEventListener('click', ()=>{
+  const name=document.getElementById('signup-name').value;
+  const email=document.getElementById('signup-email').value;
+  if(!name||!email){ alert('Fill all required fields'); return; }
+  alert('Signed up successfully!' + (paymentSection.style.display==='block'?' Payment simulated.':''));
+  signupModal.style.display='none';
+});
 
 // -------------------- FILE UPLOAD --------------------
 const fileInput = document.getElementById('file-input');
