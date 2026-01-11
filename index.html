@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sendbox — Voice-First File Collaboration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<header>
+  <h1>Sendbox</h1>
+  <p>Voice-First Secure File Collaboration</p>
+</header>
+
+<main>
+  <section class="controls">
+    <button id="voiceBtn">🎙 Voice Command</button>
+    <input type="file" id="fileInput" multiple />
+  </section>
+
+  <section class="files">
+    <h2>Your Files</h2>
+    <ul id="fileList"></ul>
+  </section>
+
+  <section class="share">
+    <h2>Share File</h2>
+    <input type="email" placeholder="Enter email (demo)" />
+    <button>Send (Demo)</button>
+  </section>
+
+  <section class="pricing">
+    <h2>Pricing</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Starter</h3>
+        <p>$0 / mo</p>
+        <span>5 files</span>
+      </div>
+      <div class="plan featured">
+        <h3>Pro</h3>
+        <p>$19 / mo</p>
+        <span>Unlimited files</span>
+      </div>
+      <div class="plan">
+        <h3>Enterprise</h3>
+        <p>Custom</p>
+        <span>Advanced security</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 Sendbox • Prototype</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
