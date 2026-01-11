@@ -1,0 +1,43 @@
+<!--
+  Sendbox Free Demo Collaboration Interface
+  Licensed under Apache License 2.0
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sendbox Free Demo</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="logo">Sendbox Demo</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#features">Features</a>
+    <a href="pricing.html">Pricing</a>
+  </nav>
+</header>
+
+<main>
+  <section class="collab-container">
+    <h1>Send Files & Collaborate</h1>
+    <div class="collab-form">
+      <input type="text" id="senderName" placeholder="Your Name">
+      <input type="email" id="senderEmail" placeholder="Your Email">
+      <input type="text" id="recipientName" placeholder="Recipient Name">
+      <input type="email" id="recipientEmail" placeholder="Recipient Email">
+      <textarea id="message" placeholder="Your Message / Notes"></textarea>
+      <input type="file" id="fileUpload" multiple>
+      <button id="voiceBtn">Use Voice Command</button>
+      <button id="sendBtn">Send Files</button>
+    </div>
+
+    <div id="sentFiles"></div>
+  </section>
+</main>
+
+<script src="demo.js"></script>
+</body>
+</html>
