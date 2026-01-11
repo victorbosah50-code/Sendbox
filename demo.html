@@ -9,16 +9,19 @@
 <body class="dashboard">
 
 <header class="dash-header">
-<h2>Sendbox™ Collaboration</h2>
-<button onclick="startVoice()">🎙 Voice Command</button>
+  <h2>Sendbox™ Collaboration Space</h2>
+  <button onclick="startVoice()">🎙 Voice</button>
 </header>
 
-<div class="upload-area" ondrop="dropFile(event)" ondragover="allowDrop(event)">
-<p>Drag & Drop Files or Folders</p>
-<input type="file" multiple webkitdirectory onchange="uploadFiles(this.files)">
+<div class="upload-zone">
+  <p>Drag & drop files or folders</p>
+  <input type="file" multiple webkitdirectory>
 </div>
 
-<div id="fileGrid" class="file-grid"></div>
+<div class="file-grid">
+  <div class="file-card">📄 Contract.pdf</div>
+  <div class="file-card">📁 Marketing Assets</div>
+</div>
 
 </body>
 </html>
