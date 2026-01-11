@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sendbox™ Demo</title>
 <link rel="stylesheet" href="styles.css">
 <script defer src="app.js"></script>
 </head>
+<body>
 
-<body class="dashboard">
-
-<header class="dash-header">
-  <h2>Sendbox™ Collaboration Space</h2>
-  <button onclick="startVoice()">🎙 Voice</button>
+<header class="navbar">
+  <div class="logo">Sendbox™ Demo</div>
+  <button class="btn ghost" onclick="startVoice()">🎙 Voice</button>
 </header>
 
-<div class="upload-zone">
-  <p>Drag & drop files or folders</p>
-  <input type="file" multiple webkitdirectory>
-</div>
+<section class="section">
+  <div class="upload">
+    <p>Drag & drop files or folders</p>
+    <input type="file" multiple webkitdirectory>
+  </div>
 
-<div class="file-grid">
-  <div class="file-card">📄 Contract.pdf</div>
-  <div class="file-card">📁 Marketing Assets</div>
-</div>
+  <div class="grid">
+    <div class="card">📄 Proposal.pdf</div>
+    <div class="card">📁 Assets</div>
+  </div>
+</section>
 
 </body>
 </html>
